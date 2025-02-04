@@ -107,4 +107,8 @@ curl -X GET http://localhost:8080/api/v1/metrics/top-domains
 - Allow users to specify their own short URLs.
 - Ensure uniqueness before assigning.
 
+### 6. **Scale the system to support large number of concurrent users**
 
+### 7. **Use NoSql Database**
+- Provides high R/W throughput.
+- Easily scalable in comparison to RDBMS.
