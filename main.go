@@ -45,17 +45,14 @@ func main() {
 		log.Fatal("Failed to connect to database:", err)
 	}
 
-	// Auto migrate the schema
 	if err := db.AutoMigrate(&models.URL{}); err != nil {
 		log.Fatal("Failed to migrate database:", err)
 	}
 
-	// Setup dependencies
 	urlRepo := repository.NewURLRepository(db)
 	urlService := service.NewURLService(urlRepo, cfg)
 	urlController := controllers.NewURLController(urlService, cfg)
 
-	// Setup and run the server
 	router := setupRouter(urlController)
 	if err := router.Run(":" + cfg.Server.Port); err != nil {
 		log.Fatal("Failed to start server:", err)
