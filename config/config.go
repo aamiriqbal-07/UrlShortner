@@ -31,7 +31,7 @@ func LoadConfig() (*Config, error) {
     cfg.Database.Port = "3306"
     cfg.Database.User = "root"
     cfg.Database.Password = "12345"
-    cfg.Database.Name = "urlshortener"
+    cfg.Database.Name = "urlshortner"
     
     cfg.ShortURL.Length = 6
     cfg.ShortURL.BaseURL = "http://localhost:8080"
